@@ -21,6 +21,8 @@ fun main(args: Array<String>) {
     runApplication<Application>(*args)
 }
 
+//Identificar rutas
+//ruta: algo que tiene nombre y al que se pueden enviar mensajes.
 const val DIRECT_ROUTE = "direct:twitter"
 const val COUNT_ROUTE = "direct:extractor"
 const val LOG_ROUTE = "direct:log"
@@ -36,6 +38,8 @@ class SearchController(private val producerTemplate: ProducerTemplate) {
         producerTemplate.requestBodyAndHeader(DIRECT_ROUTE, "mandalorian", "keywords", q)
 }
 
+//Input text-> futbol max=n
+//Usar count (filter)
 @Component
 class Router(meterRegistry: MeterRegistry) : RouteBuilder() {
 
